@@ -14,3 +14,40 @@ hr{
     height: 600px;
     margin: auto;
 }
+.board table{
+    margin: auto;
+    margin-top: 40px;
+    font-size: 100px;
+}
+td{
+    padding: 30px;
+    width: 100px;
+    height: 100px;
+}
+#top-left{
+    border-style: none solid solid none;
+}
+.top-center{
+    border-style: none solid solid solid;
+}
+.top-right{
+    border-style: none none solid solid;
+}
+.center-left{
+    border-style: solid solid solid none;
+}
+.center-center{
+    border-style: solid;
+}
+.center-right{
+    border-style: solid none solid solid;
+}
+.bottom-left{
+    border-style: solid solid none none;
+}
+.bottom-center{
+    border-style: solid solid none solid;
+}
+.bottom-right{
+    border-style: solid none none solid;
+}

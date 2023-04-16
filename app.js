@@ -1,16 +1,25 @@
+let count = 1;
+
 const gameBoard = (() => {
-    let board = [0,0,0,
-                 0,0,0,
-                 0,0,0]
+    let board = ["x","x","x",
+                 "x","x","x",
+                 "x","x","x"];
+    let topLeft = document.getElementById("top-left");
+    let displayBoard = () => {
+        let topLeft = document.getElementById("top-left");
+        topLeft.textContent = board[0];
+        console.log("hi");
+        return topLeft;
+         }
     return {
-        board
-    }
+        board, displayBoard
+    };
 })();
 
 const displayController = (() => {
 
     return {
-        
+
     }
 })
 const Player = () => {
