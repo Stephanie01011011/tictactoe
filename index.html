@@ -11,24 +11,24 @@
 <body>
     <h1>Tic Tac Toe</h1>
     <hr>
-    <h3>Player 1(X), make your move</h3>
+    <h3 id="player">Player 1, make your move</h3>
     <div class="box">
         <div class="board">
             <table>
                 <tr>
-                    <td id="top-left" onclick="displayController.displayBoard()"></td>
-                    <td id="top-center" onclick="displayController.displayBoard()"></td>
-                    <td id="top-right" onclick="displayController.displayBoard()"></td>
+                    <td class="0" id="top-left" onclick="displayController.getMark()"></td>
+                    <td class="1" id="top-center" onclick="displayController.getMark()"></td>
+                    <td class="2" id="top-right" onclick="displayController.getMark()"></td>
                 </tr>
                 <tr>
-                    <td id="center-left" onclick="displayController.displayBoard()"></td>
-                    <td id="center-center" onclick="displayController.displayBoard()"></td>
-                    <td id="center-right" onclick="displayController.displayBoard()"></td>
+                    <td class="3" id="center-left" onclick="displayController.getMark()"></td>
+                    <td class="4" id="center-center" onclick="displayController.getMark()"></td>
+                    <td class="5" id="center-right" onclick="displayController.getMark()"></td>
                 </tr>
                 <tr>
-                    <td id="bottom-left" onclick="displayController.displayBoard()"></td>
-                    <td id="bottom-center" onclick="displayController.displayBoard()"></td>
-                    <td id="bottom-right" onclick="displayController.displayBoard()"></td>
+                    <td class="6" id="bottom-left" onclick="displayController.getMark()"></td>
+                    <td class="7" id="bottom-center" onclick="displayController.getMark()"></td>
+                    <td class="8" id="bottom-right" onclick="displayController.getMark()"></td>
                 </tr>
             </table>
         </div>
