@@ -27,27 +27,27 @@ td{
 #top-left{
     border-style: none solid solid none;
 }
-.top-center{
+#top-center{
     border-style: none solid solid solid;
 }
-.top-right{
+#top-right{
     border-style: none none solid solid;
 }
-.center-left{
+#center-left{
     border-style: solid solid solid none;
 }
-.center-center{
+#center-center{
     border-style: solid;
 }
-.center-right{
+#center-right{
     border-style: solid none solid solid;
 }
-.bottom-left{
+#bottom-left{
     border-style: solid solid none none;
 }
-.bottom-center{
+#bottom-center{
     border-style: solid solid none solid;
 }
-.bottom-right{
+#bottom-right{
     border-style: solid none none solid;
 }
