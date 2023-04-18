@@ -1,9 +1,11 @@
 
+
+
+//Game board module
 const gameBoard = (() => {
     let board = ["","","",
                  "","","",
                  "","",""];
-    
     
 
     return {
@@ -11,65 +13,96 @@ const gameBoard = (() => {
     };
 })();
 
+
+
+//Controls the game play module
 const displayController = (() => {
     let mark = "O";
     let winner = false;
+    let play = "y";
     
+  
+   
+    let name1 = prompt("Player 1 enter your name:", "Player 1");
+    let name2 = prompt("Player 2 enter your name:", "Player 2");
+    
+    
+
+    window.onload = function(){
+        let player = document.getElementById("player");
+        player.textContent = name1 + ", make your move";
+    }
+    
+       
+        
+     
+    
+
+    
+   
     //Push mark to array for display   
     let getMark = () => {
-        if(winner == true){
-            clearBoard();
-        }
-      let player = document.getElementById("player");
-          if (mark == "X"){
+        
+            let player = document.getElementById("player");
+        
+            if(winner == true){
+                clearBoard();
+            }
+          
+              if (mark == "X"){
+                
+                mark = "O";
+                player.textContent = name1 + ", make your move";
+                
+            } else {
+                mark = "X";
+                player.textContent = name2 + ", make your move";
+                
+            }
             
-            mark = "O";
-            player.textContent = player1.name + ", make your move";
-            
-        } else {
-            mark = "X";
-            player.textContent = player2.name + ", make your move";
-            
-        }
+            if(event.target.className == "0"){
+                gameBoard.board[0] = mark;
+                displayBoard();
+                checkForWinner();
+            } else if(event.target.className == "1"){
+                gameBoard.board[1] = mark;
+                displayBoard();
+                checkForWinner();
+            }else if(event.target.className == "2"){
+                gameBoard.board[2] = mark;
+                displayBoard();
+                checkForWinner();
+            } else if(event.target.className == "3"){
+                gameBoard.board[3] = mark;
+                displayBoard();
+                checkForWinner();
+            } else if(event.target.className == "4"){
+                gameBoard.board[4] = mark;
+                displayBoard();
+                checkForWinner();
+            } else if(event.target.className == "5"){
+                gameBoard.board[5] = mark;
+                displayBoard();
+                checkForWinner();
+            } else if(event.target.className == "6"){
+                gameBoard.board[6] = mark;
+                displayBoard();
+                checkForWinner();
+            } else if(event.target.className == "7"){
+                gameBoard.board[7] = mark;
+                displayBoard();
+                checkForWinner();
+            } else if(event.target.className == "8"){
+                gameBoard.board[8] = mark;
+                displayBoard();
+                checkForWinner();
+            }
+        
+       
+        
+        
 
-        if(event.target.className == "0"){
-            gameBoard.board[0] = mark;
-            displayBoard();
-            checkForWinner();
-        } else if(event.target.className == "1"){
-            gameBoard.board[1] = mark;
-            displayBoard();
-            checkForWinner();
-        }else if(event.target.className == "2"){
-            gameBoard.board[2] = mark;
-            displayBoard();
-            checkForWinner();
-        } else if(event.target.className == "3"){
-            gameBoard.board[3] = mark;
-            displayBoard();
-            checkForWinner();
-        } else if(event.target.className == "4"){
-            gameBoard.board[4] = mark;
-            displayBoard();
-            checkForWinner();
-        } else if(event.target.className == "5"){
-            gameBoard.board[5] = mark;
-            displayBoard();
-            checkForWinner();
-        } else if(event.target.className == "6"){
-            gameBoard.board[6] = mark;
-            displayBoard();
-            checkForWinner();
-        } else if(event.target.className == "7"){
-            gameBoard.board[7] = mark;
-            displayBoard();
-            checkForWinner();
-        } else if(event.target.className == "8"){
-            gameBoard.board[8] = mark;
-            displayBoard();
-            checkForWinner();
-        }
-
+       
        
        
         //check for a winner after each move
@@ -77,64 +110,99 @@ const displayController = (() => {
             
             if(gameBoard.board[0] == gameBoard.board[1] && gameBoard.board[1]== gameBoard.board[2] ){
                 if (gameBoard.board[0] != ""){
-                    alert("There is a winner");
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                    
                 }
                 
             } else if(gameBoard.board[3] == gameBoard.board[4] && gameBoard.board[4]== gameBoard.board[5] ){
                 if (gameBoard.board[3] != ""){
-                    alert("There is a winner");
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                    
                 }
             } else if(gameBoard.board[6] == gameBoard.board[7] && gameBoard.board[7]== gameBoard.board[8] ){
                 if (gameBoard.board[6] != ""){
-                    alert("There is a winner");
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                    
                 }
             } else if(gameBoard.board[0] == gameBoard.board[3] && gameBoard.board[3]== gameBoard.board[6] ){
                 if (gameBoard.board[0] != ""){
-                    alert("There is a winner");
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                    
                 }
             } else if(gameBoard.board[1] == gameBoard.board[4] && gameBoard.board[4]== gameBoard.board[7] ){
                 if (gameBoard.board[1] != ""){
-                    alert("There is a winner");
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                    
                 }
             } else if(gameBoard.board[2] == gameBoard.board[5] && gameBoard.board[5]== gameBoard.board[8] ){
                 if (gameBoard.board[2] != ""){
-                    alert("There is a winner");
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                   
                 }
             } else if(gameBoard.board[0] == gameBoard.board[4] && gameBoard.board[4]== gameBoard.board[8] ){
                 if (gameBoard.board[0] != ""){
-                    alert("There is a winner");
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                    
                 }
             } else if(gameBoard.board[2] == gameBoard.board[4] && gameBoard.board[4]== gameBoard.board[6] ){
                 if (gameBoard.board[2] != ""){
-                    alert("There is a winner");
-                    if(mark == "X"){
-                        player.textContent = player1.name + " is the winner!";
-                    } else {
-                        player.textContent = player2.name + " is the winner!";
-                    }
+                    alertWinner();
+                    playAgain();
                     winner = true;
+                    
                 }
             }
+        }
+
+        function alertWinner(){
+            
+                    if(mark == "X"){
+                        clearBoard();
+                        player.textContent = name1 + " is the winner!";
+                    } else {
+                        clearBoard();
+                        player.textContent = name2 + " is the winner!";
+                    }
+
         }
         function clearBoard() {
             gameBoard.board = ["","","","","","","","",""];
             winner = false;
             mark = "O";
-            player.textContent = player1.name + ", make your move";
+            
             displayBoard();
         }
 
+        function playAgain(){
+            let play = prompt("Would you like to play again?", "'Y' or 'N'")
+            play.toLowerCase();
+            if(play == "y"){
+                clearBoard();
+                
+            } else {
+                clearBoard();
+            }
+        }
 
-
+        
+    
   
    }
+
    
     
        //Display the gameboard everytime a user places a mark
@@ -168,14 +236,13 @@ const displayController = (() => {
     };
 })();
 
-const Player = (name, mark) => {
+const Player = (name) => {
     return {
-        name, mark
+        name
     };
 }
 
-const player1 = Player("Stephanie", "X");
-const player2 = Player("Alexander", "O");
+
 
 
 
