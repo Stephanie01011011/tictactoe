@@ -20,7 +20,7 @@ const displayController = (() => {
     let mark = "O";
     let winner = false;
     let play = "y";
-    
+    let newRound = false;
   
    
     let name1 = prompt("Player 1 enter your name:", "Player 1");
@@ -44,21 +44,21 @@ const displayController = (() => {
     let getMark = () => {
         
             let player = document.getElementById("player");
-        
-            if(winner == true){
-                clearBoard();
-            }
+            
+                if (mark == "X"){
+                
+                    mark = "O";
+                    player.textContent = name1 + ", make your move";
+                    
+                } else {
+                    mark = "X";
+                    player.textContent = name2 + ", make your move";
+                    
+                }
+            
+           
           
-              if (mark == "X"){
-                
-                mark = "O";
-                player.textContent = name1 + ", make your move";
-                
-            } else {
-                mark = "X";
-                player.textContent = name2 + ", make your move";
-                
-            }
+              
             
             if(event.target.className == "0"){
                 gameBoard.board[0] = mark;
@@ -100,7 +100,9 @@ const displayController = (() => {
         
        
         
-        
+            if(winner == true){
+                clearBoard();
+            }
 
        
        
@@ -192,7 +194,8 @@ const displayController = (() => {
             play.toLowerCase();
             if(play == "y"){
                 clearBoard();
-                
+                mark = "O";
+                getMark();
             } else {
                 clearBoard();
             }
